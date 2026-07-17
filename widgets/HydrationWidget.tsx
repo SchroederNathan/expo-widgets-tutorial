@@ -1,4 +1,4 @@
-import { Button, Capsule, HStack, Image, Rectangle, Spacer, Text, VStack, ZStack } from "@expo/ui/swift-ui"
+import { Button, Capsule, HStack, Image, Link, Rectangle, Spacer, Text, VStack, ZStack } from "@expo/ui/swift-ui"
 import { buttonStyle, containerBackground, containerRelativeFrame, font, foregroundStyle, frame, padding, tint } from "@expo/ui/swift-ui/modifiers"
 import { createWidget, WidgetEnvironment } from "expo-widgets"
 
@@ -49,12 +49,13 @@ const HydrationWidget = (props: HydrationWidget, environment: WidgetEnvironment)
                 </ZStack>
                 <Spacer />
                 <VStack alignment="trailing">
-                    <Button
+                    <Link
+                        destination="hydration-app://hydrate"
                         modifiers={[buttonStyle("glassProminent"), tint("#FFFFFF22")]}
                     >
                         <Image systemName="drop.fill" size={16} color={"#fff"} />
                         <Image systemName="plus.circle.fill" size={16} color={"#fff"} />
-                    </Button>
+                    </Link>
                     <Spacer />
                     <Text
                         modifiers={[
