@@ -2,6 +2,7 @@
   "expo": {
     "name": "hydration-app",
     "slug": "hydration-app",
+    "scheme": "hydration-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,7 +28,20 @@
     },
     "plugins": [
       "expo-router",
-      "expo-status-bar"
+      "expo-status-bar",
+      [
+        "expo-widgets",
+        {
+          "widgets": [
+            {
+              "name": "HydrationWidget",
+              "displayName": "Hydration Widget",
+              "description": "A simple hydration tracking widget.",
+              "supportedFamilies": ["systemSmall", "systemMedium"]
+            }
+          ]
+        }
+      ]
     ]
   }
 }
