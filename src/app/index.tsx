@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import HydrationWidget from "../../widgets/HydrationWidget";
 
 const GOAL = 64;
 
 export default function HomeScreen() {
   const [progress, setProgress] = useState(0);
   const [buttonWidth, setButtonWidth] = useState(0);
+
+  useEffect(() => {
+    HydrationWidget.updateSnapshot({progress, goal: GOAL})
+  }, [progress])
+
   const ratio = Math.min(progress / GOAL, 1);
 
   return (
