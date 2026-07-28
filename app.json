@@ -9,7 +9,10 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.exponathan.hydration-app"
+      "bundleIdentifier": "com.exponathan.hydration-app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -37,11 +40,38 @@
               "name": "HydrationWidget",
               "displayName": "Hydration Widget",
               "description": "A simple hydration tracking widget.",
-              "supportedFamilies": ["systemSmall", "systemMedium"]
+              "supportedFamilies": [
+                "systemSmall",
+                "systemMedium"
+              ]
             }
           ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "ExpoWidgetsTarget",
+                  "bundleIdentifier": "com.exponathan.hydration-app.ExpoWidgetsTarget",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.exponathan.hydration-app"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "11b1a096-33f8-43ed-839d-d9b3bb99c35a"
+      }
+    },
+    "owner": "exponathan"
   }
 }
